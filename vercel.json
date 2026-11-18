@@ -7,7 +7,6 @@
     { "source": "/about", "destination": "/frontend/html/about.html" },
     { "source": "/about.html", "destination": "/frontend/html/about.html" },
     { "source": "/css/:path*", "destination": "/frontend/css/:path*" },
-    { "source": "/js/:path*", "destination": "/frontend/js/:path*" },
-    { "source": "/api/:path*", "destination": "/api/index.py" }
+    { "source": "/js/:path*", "destination": "/frontend/js/:path*" }
   ]
 }

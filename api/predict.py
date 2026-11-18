@@ -13,7 +13,7 @@ from backend.app import analyze_url
 class handler(BaseHTTPRequestHandler):
     def _send_cors_headers(self):
         self.send_header("Access-Control-Allow-Origin", "*")
-        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+        self.send_header("Access-Control-Allow-Methods", "POST, OPTIONS")
         self.send_header("Access-Control-Allow-Headers", "Content-Type")
 
     def _send_json(self, payload, status=200):
@@ -30,18 +30,7 @@ class handler(BaseHTTPRequestHandler):
         self._send_cors_headers()
         self.end_headers()
 
-    def do_GET(self):
-        if self.path.rstrip("/") == "/api/health":
-            self._send_json({"status": "ok", "message": "Backend phishing detection aktif"})
-            return
-
-        self._send_json({"error": "Endpoint tidak ditemukan"}, status=404)
-
     def do_POST(self):
-        if self.path.rstrip("/") != "/api/predict":
-            self._send_json({"error": "Endpoint tidak ditemukan"}, status=404)
-            return
-
         try:
             length = int(self.headers.get("Content-Length", "0"))
             raw_body = self.rfile.read(length).decode("utf-8") if length > 0 else "{}"
