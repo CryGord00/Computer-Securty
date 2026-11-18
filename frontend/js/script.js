@@ -1,4 +1,8 @@
-const apiBase = window.location.protocol === "file:" ? "http://127.0.0.1:5000" : window.location.origin;
+const isLocalStaticPreview =
+  window.location.protocol === "file:" ||
+  ((window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost") &&
+    window.location.port !== "10000");
+const apiBase = isLocalStaticPreview ? "http://127.0.0.1:10000" : window.location.origin;
 
 const detectButton = document.getElementById("detectButton");
 const urlInput = document.getElementById("urlInput");

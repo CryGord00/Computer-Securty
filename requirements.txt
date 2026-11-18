@@ -1,3 +1,2 @@
-scikit-learn
-pandas
-numpy
+# Vercel serverless deployment uses Python stdlib (no extra ML packages needed without phishing_model.pkl).
+# For local development with ML model support, install backend/requirements.txt instead.

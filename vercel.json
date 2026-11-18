@@ -1,0 +1,13 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/frontend/html/index.html" },
+    { "source": "/index.html", "destination": "/frontend/html/index.html" },
+    { "source": "/detection", "destination": "/frontend/html/detection.html" },
+    { "source": "/detection.html", "destination": "/frontend/html/detection.html" },
+    { "source": "/about", "destination": "/frontend/html/about.html" },
+    { "source": "/about.html", "destination": "/frontend/html/about.html" },
+    { "source": "/css/:path*", "destination": "/frontend/css/:path*" },
+    { "source": "/js/:path*", "destination": "/frontend/js/:path*" },
+    { "source": "/api/:path*", "destination": "/api/index.py" }
+  ]
+}
